@@ -1,0 +1,25 @@
+--- Float Tools
+-- @module Float
+
+Float = {}
+
+---
+-- converts float string (e,g. 123 or 12.312) to number
+--
+-- @string float string to convert
+--
+-- @treturn number
+--
+Float.tonumber = function(float)
+  -- @todo really useful, because tonumber does that already?
+
+  local dot = string.find(float,"%.")
+  if (not dot) then return tonumber(float) end
+  local N_ = string.sub(float,1,dot-1)
+  local _N = string.sub(float,dot+1, -1)
+  local N = tonumber(N_.._N)
+  if (not N) then return nil end
+  for i=1,#_N do
+    N = N/10 end
+  return N
+end

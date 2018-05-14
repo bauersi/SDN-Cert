@@ -1,0 +1,8 @@
+require "tex/general"
+require "tex/blocks"
+require "tex/figure"
+require "tex/filecontent"
+require "tex/graphs"
+require "tex/tabular"
+require "tex/text"
+require "tex/document"
